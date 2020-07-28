@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "CoreTrackerSync": {
+      "commandName": "Project",
+      "commandLineArgs": "C:\\Users\\brent\\Documents\\CoreTrackerSync"
+    }
+  }
+}
