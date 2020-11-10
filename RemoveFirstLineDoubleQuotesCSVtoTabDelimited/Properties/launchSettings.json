@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "RemoveFirstLineDoubleQuotesCSVtoTabDelimited": {
+      "commandName": "Project",
+      "commandLineArgs": "c:\\temp\\test.csv c:\\temp\\test.txt"
+    }
+  }
+}

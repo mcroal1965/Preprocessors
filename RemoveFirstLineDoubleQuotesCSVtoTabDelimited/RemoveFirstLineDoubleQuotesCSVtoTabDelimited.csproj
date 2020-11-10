@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Authors>Michael Croal</Authors>
+    <Company>Agile Banking Consulting LLC</Company>
+    <Description>Preprocessor for autofill processes</Description>
+    <Copyright>Agile Banking Consulting LLC 2020</Copyright>
+  </PropertyGroup>
+
+</Project>
