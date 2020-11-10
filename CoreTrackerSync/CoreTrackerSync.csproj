@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Authors>Brent Croal</Authors>
+    <Company>Agile Banking Consulting LLC</Company>
+    <Copyright>Agile Banking Consulting LLC (c) 2020</Copyright>
+    <ApplicationIcon>AgileBanking.ico</ApplicationIcon>
+  </PropertyGroup>
+
+</Project>
