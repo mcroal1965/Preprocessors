@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading;
 using System.Linq;
 
 namespace Test
@@ -11,10 +12,10 @@ namespace Test
         {
             try
             {
-                string FileNameIn;
-                string FileNameOut;
-                FileNameIn = args[0];
-                FileNameOut = args[1];
+                string FileNameIn = @"C:\CB\EntityInvolvement\EntityInvolvement4.14.2021.csv";
+                string FileNameOut = @"C:\CB\EntityInvolvement\Temp_EntityInvolvement4.14.2021.txt";
+                //FileNameIn = args[0];
+                //FileNameOut = args[1];
 
                 Int32 counter = 0;
                 Int32 ConvertFlag = 1;
@@ -59,7 +60,15 @@ namespace Test
                         {
                             if (line != '\"')
                             {
-                                c.Add(line);
+                                if (line is (char)13)
+                                {
+                                    c.Add((char)09);
+                                    c.Add(line);
+                                }
+                                else
+                                {
+                                    c.Add(line);
+                                }
                             }
                         }
                     }
@@ -68,16 +77,19 @@ namespace Test
                     {
                         counter++;
                     }
-
                 }
 
                 foreach (char i in c)
                 {
-                    outputlines.Add(i.ToString());
+                    outputlines.Add(i.ToString());                  
                 }
 
-                string output = string.Join("", outputlines.ToArray());
+                string output = string.Join("", outputlines.ToArray());                
                 File.AppendAllText(output_file, output);
+                //File.Copy(output_file, @"D:\nautilus\COLDimport\COLD_HRAFKS.txt");
+                //Console.WriteLine("Waiting for 5000");
+                //Thread.Sleep(5000);
+                //Console.WriteLine("Done");
                 Environment.Exit(0);
             }
             catch (Exception ex)
