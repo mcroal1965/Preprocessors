@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Threading;
 
 namespace RemoveFirstLineLINEOUT
 {
@@ -33,6 +34,8 @@ namespace RemoveFirstLineLINEOUT
                     if (Counter > 0)
                         File.AppendAllText(FileNameOut, str + "\r\n");
                 }
+                Thread.Sleep(5000);
+                Environment.Exit(0);
             }
             catch (Exception ex)
             {
