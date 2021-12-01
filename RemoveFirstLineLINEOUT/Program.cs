@@ -14,10 +14,10 @@ namespace RemoveFirstLineLINEOUT
                 string FileNameIn;
                 string FileNameOut;
 
-                //FileNameIn = args[0];
-                //FileNameOut = args[1];
-                FileNameIn = @"C:\CB\test\NewTextDocument.txt";
-                FileNameOut = @"C:\CB\test\NewTextDocument2.txt";
+                FileNameIn = args[0];
+                FileNameOut = args[1];
+                //FileNameIn = @"C:\CB\test\NewTextDocument.txt";
+                //FileNameOut = @"C:\CB\test\NewTextDocument2.txt";
 
                 StreamReader reading = File.OpenText(FileNameIn);
                 string str;
