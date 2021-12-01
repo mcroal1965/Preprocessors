@@ -1,19 +1,19 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <ApplicationIcon>AgileBanking.ico</ApplicationIcon>
     <Authors>Brent Croal</Authors>
     <Company>Agile Banking Consulting LLC</Company>
     <Description>Preprocessor</Description>
     <Copyright>Agile Banking Consulting LLC (c) 2020</Copyright>
     <PackageIcon>AgileBanking.ico</PackageIcon>
     <PackageIconUrl />
-    <ApplicationIcon>C:\Users\brent\source\repos\Preprocessors\Test\AgileBanking.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\Test\AgileBanking.ico">
+    <None Include="..\RemoveFirstLine\AgileBanking.ico">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>

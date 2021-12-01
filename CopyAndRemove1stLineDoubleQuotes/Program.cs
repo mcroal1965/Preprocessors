@@ -35,6 +35,7 @@ namespace CopyAndRemove1stLineDoubleQuotes
             catch (Exception ex)
             {
                 Console.WriteLine("Error:" + ex);
+                Environment.Exit(1);
             }
         }
     }
