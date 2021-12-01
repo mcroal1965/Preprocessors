@@ -34,6 +34,7 @@ namespace RemoveFirstLineLINEOUT
                     if (Counter > 0)
                         File.AppendAllText(FileNameOut, str + "\r\n");
                 }
+                reading.Close();
                 Thread.Sleep(5000);
                 Environment.Exit(0);
             }
