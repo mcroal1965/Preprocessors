@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <ApplicationIcon>AgileBanking.ico</ApplicationIcon>
+    <PackageIcon>AgileBanking.ico</PackageIcon>
+    <PackageIconUrl />
+    <Authors>Brent Croal</Authors>
+    <Company>Agile Banking Consulting LLC</Company>
+    <Copyright>Agile Banking Consulting LLC (c) 2021</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\..\..\Downloads\AgileBanking.ico">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
