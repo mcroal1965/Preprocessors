@@ -9,11 +9,15 @@
     <Copyright>Agile Banking Consulting LLC (c) 2020</Copyright>
     <PackageIcon>AgileBanking.ico</PackageIcon>
     <PackageIconUrl />
-    <ApplicationIcon>C:\Users\brent\source\repos\Preprocessors\Test\AgileBanking.ico</ApplicationIcon>
+    <ApplicationIcon>AgileBanking.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <None Include="..\Test\AgileBanking.ico">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="AgileBanking.ico">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>

@@ -4,6 +4,8 @@ using System.IO;
 using System.Threading;
 using System.Linq;
 
+//02-14-2022 Prefixing FJ and removing windows login slashes
+
 namespace Test
 {
     class Program
@@ -12,8 +14,8 @@ namespace Test
         {
             try
             {
-                string FileNameIn = @"C:\CB\EntityInvolvement\EntityInvolvement4.14.2021.csv";
-                string FileNameOut = @"C:\CB\EntityInvolvement\Temp_EntityInvolvement4.14.2021.txt";
+                string FileNameIn = @"C:\Users\brent\source\CB\Nautilus_Export.csv";
+                string FileNameOut = @"C:\Users\brent\source\CB\Temp_Nautilus_Export.txt";
                 //FileNameIn = args[0];
                 //FileNameOut = args[1];
 
@@ -21,12 +23,13 @@ namespace Test
                 Int32 ConvertFlag = 1;
 
                 string output_file = FileNameOut;
-                string input_file = File.ReadAllText(FileNameIn);
+                string input_file_chars = File.ReadAllText(FileNameIn);
 
                 List<char> c = new List<char>();
-                List<string> outputlines = new List<string>();
+                List<string> tab_lines = new List<string>();
+                List<string> output_lines = new List<string>();
 
-                foreach (char line in input_file)
+                foreach (char line in input_file_chars)
                 {
                     if (counter > 0)
                     {
@@ -81,15 +84,48 @@ namespace Test
 
                 foreach (char i in c)
                 {
-                    outputlines.Add(i.ToString());                  
+                    tab_lines.Add(i.ToString());
                 }
 
-                string output = string.Join("", outputlines.ToArray());                
-                File.AppendAllText(output_file, output);
-                //File.Copy(output_file, @"D:\nautilus\COLDimport\COLD_HRAFKS.txt");
-                //Console.WriteLine("Waiting for 5000");
-                //Thread.Sleep(5000);
-                //Console.WriteLine("Done");
+                string tab_line = string.Join("", tab_lines.ToArray());
+                string[] input_file_lines = tab_line.Split(new[] { '\n' });
+
+                foreach (string line in input_file_lines)
+                {
+                    if (line != "" && line != null)
+                    {
+                        var pieces = line.Split(new[] { '\t' }, 13);
+
+                        string file_number = pieces[0];
+                        string division = pieces[5];
+                        string windows_login = pieces[9];
+                        string supv_number = pieces[11];
+
+                        if (windows_login.Contains('/'))
+                        {
+                            windows_login = windows_login.Substring(windows_login.LastIndexOf('/') + 1);
+                            pieces[9] = windows_login;
+                        }
+
+                        if (division == "First Jersey")
+                        {
+                            file_number = "FJ" + (file_number).PadLeft(4, '0');
+                            pieces[0] = file_number;
+
+                            supv_number = "FJ" + (supv_number).PadLeft(4, '0');
+                            pieces[11] = supv_number;
+                        }
+
+                        foreach (string piece in pieces)
+                        {
+                            if (piece != " " && piece != "" && piece != '\t'.ToString() && piece != '\n'.ToString() && piece != '\r'.ToString())
+                                output_lines.Add(piece.ToString() + '\t');
+                        }
+                        output_lines.Add('\n'.ToString());
+                    }
+                }
+
+                File.AppendAllText(output_file, string.Join("", output_lines.ToArray()));
                 Environment.Exit(0);
             }
             catch (Exception ex)
