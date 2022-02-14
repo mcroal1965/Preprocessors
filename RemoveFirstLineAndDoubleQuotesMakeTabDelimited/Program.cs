@@ -14,10 +14,10 @@ namespace Test
         {
             try
             {
-                string FileNameIn = @"C:\Users\brent\source\CB\Nautilus_Export.csv";
-                string FileNameOut = @"C:\Users\brent\source\CB\Temp_Nautilus_Export.txt";
-                //FileNameIn = args[0];
-                //FileNameOut = args[1];
+                //string FileNameIn = @"C:\Users\brent\source\CB\Nautilus_Export.csv";
+                //string FileNameOut = @"C:\Users\brent\source\CB\Temp_Nautilus_Export.txt";
+                string FileNameIn = args[0];
+                string FileNameOut = args[1];
 
                 Int32 counter = 0;
                 Int32 ConvertFlag = 1;
