@@ -5,6 +5,7 @@ using System.Threading;
 using System.Linq;
 
 //02-14-2022 Prefixing FJ and removing windows login slashes
+//02-15-2022 Fixed missing tabs when fields are missing
 
 namespace Test
 {
@@ -118,7 +119,7 @@ namespace Test
 
                         foreach (string piece in pieces)
                         {
-                            if (piece != " " && piece != "" && piece != '\t'.ToString() && piece != '\n'.ToString() && piece != '\r'.ToString())
+                            if (piece != " " && piece != '\t'.ToString() && piece != '\n'.ToString() && piece != '\r'.ToString())
                                 output_lines.Add(piece.ToString() + '\t');
                         }
                         output_lines.Add('\n'.ToString());

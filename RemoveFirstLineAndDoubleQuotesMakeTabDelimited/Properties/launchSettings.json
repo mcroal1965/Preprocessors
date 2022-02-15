@@ -2,7 +2,7 @@
   "profiles": {
     "RemoveFirstLineAndDoubleQuotesMakeTabDelimited": {
       "commandName": "Project",
-      "commandLineArgs": "\"c:\\newfolder\\adp extract - nautilus export test - for user profile hr employee afks.csv\" c:\\newfolder\\temp.txt"
+      "commandLineArgs": "C:\\Users\\brent\\source\\CB\\Nautilus_Export.csv C:\\Users\\brent\\source\\CB\\Temp_Nautilus_Export.txt"
     }
   }
 }
