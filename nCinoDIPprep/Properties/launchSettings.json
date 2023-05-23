@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "nCinoDIPprep": {
+      "commandName": "Project",
+      "commandLineArgs": "\"C:\\Users\\brent\\AgileBanking\\CB\\test\\nCino_Index\\NARCHIVE_Nautilus_Index (3).csv\" \"C:\\Users\\brent\\AgileBanking\\CB\\test\\nCino_Index\\fileout.txt\""
+    }
+  }
+}

@@ -2,7 +2,7 @@
   "profiles": {
     "RemoveFirstLineAndDoubleQuotesMakeTabDelimited": {
       "commandName": "Project",
-      "commandLineArgs": "C:\\Users\\brent\\source\\CB\\Nautilus_Export.csv C:\\Users\\brent\\source\\CB\\Temp_Nautilus_Export.txt"
+      "commandLineArgs": "\"C:\\Users\\brent\\AgileBanking\\CB\\temp\\Nautilus Export JR Test.csv\" \"C:\\Users\\brent\\AgileBanking\\CB\\temp\\Temp_Test.txt\""
     }
   }
 }
