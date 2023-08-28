@@ -6,6 +6,7 @@ using System.Linq;
 
 //02-14-2022 Prefixing FJ and removing windows login slashes
 //02-15-2022 Fixed missing tabs when fields are missing
+//08-28-2023 Removed leading zero from file num and supv num
 
 namespace Test
 {
@@ -97,10 +98,12 @@ namespace Test
                     {
                         var pieces = line.Split(new[] { '\t' }, line.Count(f => (f == (char)09)) + 1);
 
-                        string file_number = pieces[0];
+                        string file_number = pieces[0].TrimStart(new Char[] { '0' });
+                        pieces[0] = file_number;
                         string division = pieces[5];
                         string windows_login = pieces[9];
-                        string supv_number = pieces[11];
+                        string supv_number = pieces[11].TrimStart(new Char[] { '0' });
+                        pieces[11] = supv_number;
                         string benefit_eligibility = pieces[13];
                         string position_id = pieces[15];
 
@@ -110,7 +113,8 @@ namespace Test
                             pieces[9] = windows_login;
                         }
 
-                        if (position_id.Substring(0,3) != "VKE")
+                        
+                        if (position_id.Substring(0,3) != "VKE" && position_id.Length > 0)
                         {
                             file_number = position_id.Substring(0, 2) + (file_number).PadLeft(4, '0');
                             pieces[0] = file_number;
@@ -118,6 +122,7 @@ namespace Test
                             supv_number = position_id.Substring(0, 2) + (supv_number).PadLeft(4, '0');
                             pieces[11] = supv_number;
                         }
+                        
 
                         /*
                         if (division == "First Jersey")
