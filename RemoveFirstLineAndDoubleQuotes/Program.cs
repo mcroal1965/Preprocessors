@@ -45,6 +45,13 @@ namespace RemoveFirstLineAndDoubleQuotes
                         try { newSplitStr[11] = int.Parse(newSplitStr[11]).ToString(); } catch { } //Reports To File Number
                         try { newSplitStr[16] = int.Parse(newSplitStr[16]).ToString(); } catch { } //Cost Center
 
+                        if (newSplitStr[15].Substring(0, 3) != "VKE" && newSplitStr[15].Length > 0)
+                        {
+                            newSplitStr[0] = newSplitStr[15].Substring(0, 2) + newSplitStr[0].PadLeft(4, '0');
+
+                            newSplitStr[11] = newSplitStr[15].Substring(0, 2) + newSplitStr[11].PadLeft(4, '0');
+                        }
+
                         string newStr = string.Join(",", newSplitStr) + "\r\n";
 
                         File.AppendAllText(FileNameOut, newStr);
