@@ -41,6 +41,10 @@ namespace RemoveFirstLineAndDoubleQuotes
                             newSplitStr[i] = splitStr[i].Replace("\"", "").Replace(",", "");
                         }
 
+                        try { newSplitStr[0] = int.Parse(newSplitStr[0]).ToString(); } catch { } //File Number 
+                        try { newSplitStr[11] = int.Parse(newSplitStr[11]).ToString(); } catch { } //Reports To File Number
+                        try { newSplitStr[16] = int.Parse(newSplitStr[16]).ToString(); } catch { } //Cost Center
+
                         string newStr = string.Join(",", newSplitStr) + "\r\n";
 
                         File.AppendAllText(FileNameOut, newStr);
