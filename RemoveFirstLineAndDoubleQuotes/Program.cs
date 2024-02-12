@@ -26,7 +26,24 @@ namespace RemoveFirstLineAndDoubleQuotes
                 {
                     if (Counter > 0)
                     {
-                        File.AppendAllText(FileNameOut, str.Replace("\"", "") + "\r\n");
+                        if (str.IndexOf("\"") > 0)
+                        {
+                            int firstQuote = str.IndexOf("\"") + 1;
+                            string jobTitleDescription = str.Substring(firstQuote - 1, 1 + str.Substring(firstQuote, str.Length - firstQuote).IndexOf("\""));
+                            str = str.Replace(jobTitleDescription, jobTitleDescription.Replace(",", ""));
+                        }
+
+                        string[] splitStr = str.Split(",");
+                        string[] newSplitStr = new string[splitStr.Length];
+
+                        for (int i = 0; i < splitStr.Length; i++)
+                        {
+                            newSplitStr[i] = splitStr[i].Replace("\"", "").Replace(",", "");
+                        }
+
+                        string newStr = string.Join(",", newSplitStr) + "\r\n";
+
+                        File.AppendAllText(FileNameOut, newStr);
                     }
 
                     Counter += 1;

@@ -8,6 +8,15 @@
     <Copyright>Agile Banking Consulting LLC (c) 2020</Copyright>
     <Description>Preprocessor</Description>
     <Authors>Michael Croal, Brent Croal</Authors>
+    <PackageIcon>AgileBanking.ico</PackageIcon>
+    <PackageIconUrl />
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="AgileBanking.ico">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>

@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "RemoveFirstLineAndDoubleQuotesMakeTabDelimited": {
+    "RemoveFirstLineAndDoubleQuotes": {
       "commandName": "Project",
       "commandLineArgs": "\"C:\\Users\\brent\\AgileBanking\\CB\\test\\HR\\Nautilus Export.csv\" \"C:\\Users\\brent\\AgileBanking\\CB\\test\\HR\\Temp_Test.txt\""
     }
